@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATSU</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght=400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo-dojo.png" alt="Logo do Dojo" class="logo-img">
+                <span class="logo-text">KATSU</span>
+            </a>
+            <nav>
+                <button class="hamburger" aria-label="Abrir Menu">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Principal</a></li>
+                    <li><a href="gallery.html" class="active">Galeria</a></li>
+                    <li><a href="index.html#about">Sobre</a></li>
+                    <li><a href="index.html#classes">Aulas</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery" class="section-padding">
+            <div class="container">
+                <h3>Nossa Galeria de Fotos</h3>
+                <!-- <p>Momentos de treinamento e competições.</p>  -->
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="img/b1.jpg" alt="Alunos treinando Karatê">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b2.jpg" alt="Cerimônia de Graduação">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b3.jpg" alt="Demonstração de Kata">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b4.jpg" alt="Aula de Karatê Infantil">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b5.jpg" alt="Treino de Kumite">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b6.jpg" alt="Foto do grupo de alunos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b7.jpg" alt="Foto do grupo de alunos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b8.jpg" alt="Foto do grupo de alunos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b9.jpg" alt="Foto do grupo de alunos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b10.jpg" alt="Foto do grupo de alunos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b11.jpg" alt="Foto do grupo de alunos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/b12.jpg" alt="Foto do grupo de alunos">
+                    </div>
+
+
+
+                        <div id="modal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img-ampliada">
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 INSTITUTO KATSU DE KARATÊ. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <strong>Edson Oliveira</strong></p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("img-ampliada");
+  const close = document.querySelector(".close");
+
+
+  document.querySelectorAll(".gallery-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+ 
+  close.onclick = () => modal.style.display = "none";
+
+ 
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
